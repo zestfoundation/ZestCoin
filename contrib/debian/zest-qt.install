@@ -1,0 +1,6 @@
+usr/local/bin/zest-qt usr/bin
+share/pixmaps/zest32.xpm usr/share/pixmaps
+share/pixmaps/zest16.xpm usr/share/pixmaps
+share/pixmaps/zest128.xpm usr/share/pixmaps
+debian/zest-qt.desktop usr/share/applications
+debian/zest-qt.protocol usr/share/kde4/services/

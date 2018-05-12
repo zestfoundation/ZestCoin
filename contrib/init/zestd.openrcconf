@@ -1,0 +1,26 @@
+# /etc/conf.d/zestd: config file for /etc/init.d/zestd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/zest/zest.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/zestd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/zestd.pid"
+
+# Where to write zestd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/zestd"
+
+# User and group to own zestd process
+#BITCOIND_USER="zest"
+#BITCOIND_GROUP="zest"
+
+# Path to zestd executable
+#BITCOIND_BIN="/usr/bin/zestd"
+
+# Nice value to run zestd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

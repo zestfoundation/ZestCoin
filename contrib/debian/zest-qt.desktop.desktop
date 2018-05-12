@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Zest
+Comment=Zest P2P Cryptocurrency
+Exec=zest-qt %u
+Terminal=false
+Type=Application
+Icon=zest128
+MimeType=x-scheme-handler/zest;
+Categories=Office;Finance;
+Name[en_US]=zest-qt.desktop

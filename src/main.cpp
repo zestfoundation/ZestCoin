@@ -1617,8 +1617,8 @@ int64_t GetBlockValue(int nHeight)
 {
     int64_t nSubsidy = 0;
 
-    if (nHeight <= 1000)
-        nSubsidy = 1500 * COIN;
+    if (nHeight == 0)
+        nSubsidy = 1500000 * COIN; // Premine: 1,500,000
     else if (nHeight <= 5000)
         nSubsidy = 1 * COIN;
     else if (nHeight > 5000 && nHeight <= 25000)

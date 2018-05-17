@@ -53,11 +53,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x0000014f6d392e28fabb8f0660b5fb52243c27fd6daf02f8a7b6d3d582bdd469"));
+    (0, uint256("0x00000899ed127026c5bcb3c6e278546868ad70fb634676fb1beab35143eb03e6"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1522340645, // * UNIX timestamp of last checkpoint block
+    1526549121, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -121,20 +121,17 @@ public:
          * Build the genesis block. Note that the output of the genesis coinbase cannot
          * be spent as it did not originally exist in the database.
          *
-         * python ~/genesis.py -a quark-hash -z "80,000 New Merchants in Europe Gain Option to Accept Crypto" -t 1522340645 -v 0 -p 041e28c90f14d4e5012e65cdbe87d8f7d9026f471ba721e10365aa43a863a66e4f4eed88ff43abf5365070c6fde49de8766eafa09c933ffb9a4c0d7e77103305ff
-         * 04ffff001d01042642544320426c6f636b20353031353932202d20323031372d31322d32392031353a34333a3337
+         * -a quark-hash -z "HTC to Launch Its Own Cryptocurrency-Focused Smartphone, Exodus" -t 1526549121 -v 0 -p 041e28c90f14d4e5012e65cdbe87d8f7d9026f471ba721e10365aa43a863a66e4f4eed88ff43abf5365070c6fde49de8766eafa09c933ffb9a4c0d7e77103305ff
          * algorithm: quark-hash
-         * merkle hash: ee61deeefcea256367e31695a106b2acdd71bbc5cb365fe34eafbb78b0980c98
-         * pszTimestamp: 80,000 New Merchants in Europe Gain Option to Accept Crypto
+         * merkle hash: 1b9a6ff10578f0d369601db5cfa1542ee5055be21374639575dfe46eb68a0d11
+         * pszTimestamp: HTC to Launch Its Own Cryptocurrency-Focused Smartphone, Exodus
          * pubkey: 041e28c90f14d4e5012e65cdbe87d8f7d9026f471ba721e10365aa43a863a66e4f4eed88ff43abf5365070c6fde49de8766eafa09c933ffb9a4c0d7e77103305ff
-         * time: 1522340645
+         * time: 1526549121
          * bits: 0x1e0ffff0
-         * Searching for genesis hash..
-         * 16525.0 hash/s, estimate: 72.2 hgenesis hash found!
-         * nonce: 21284662
-         * genesis_hash: 0000014f6d392e28fabb8f0660b5fb52243c27fd6daf02f8a7b6d3d582bdd469
+         * nonce: 22811910
+         * genesis_hash: 00000899ed127026c5bcb3c6e278546868ad70fb634676fb1beab35143eb03e6
          */
-        const char* pszTimestamp = "80,000 New Merchants in Europe Gain Option to Accept Crypto";
+        const char* pszTimestamp = "HTC to Launch Its Own Cryptocurrency-Focused Smartphone, Exodus";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -145,13 +142,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1522340645;
+        genesis.nTime = 1526549121;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 21284662;
+        genesis.nNonce = 22811910;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000014f6d392e28fabb8f0660b5fb52243c27fd6daf02f8a7b6d3d582bdd469"));
-        assert(genesis.hashMerkleRoot == uint256("0xee61deeefcea256367e31695a106b2acdd71bbc5cb365fe34eafbb78b0980c98"));
+        assert(hashGenesisBlock == uint256("0x00000899ed127026c5bcb3c6e278546868ad70fb634676fb1beab35143eb03e6"));
+        assert(genesis.hashMerkleRoot == uint256("0x1b9a6ff10578f0d369601db5cfa1542ee5055be21374639575dfe46eb68a0d11"));
 
         // DNS Seeding
         vSeeds.push_back(CDNSSeedData("seed1.zestcoin.io", "seed1.zestcoin.io"));
@@ -228,11 +225,11 @@ public:
         nMaxMoneyOut = 29300000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1522340645;
-        genesis.nNonce = 21284662;
+        genesis.nTime = 1526549121;
+        genesis.nNonce = 22811910;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000014f6d392e28fabb8f0660b5fb52243c27fd6daf02f8a7b6d3d582bdd469"));
+        assert(hashGenesisBlock == uint256("0x00000899ed127026c5bcb3c6e278546868ad70fb634676fb1beab35143eb03e6"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -300,13 +297,13 @@ public:
         nMaturity = 10;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         bnProofOfStakeLimit = ~uint256(0) >> 24;
-        genesis.nTime = 1522340645;
+        genesis.nTime = 1526549121;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 20542301;
+        genesis.nNonce = 20542300;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 34925;
-        assert(hashGenesisBlock == uint256("0x32e0dc6a6e41f5bb1278b29d6b8fbeb3a26ad246fbe112c42ff2d4a8f4e2a3b2"));
+        assert(hashGenesisBlock == uint256("0x56beab6697b2ba5d0160e7a6734e77c2be394d253a053f56b7ef0ef9454ca848"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.

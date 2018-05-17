@@ -53,11 +53,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x00000899ed127026c5bcb3c6e278546868ad70fb634676fb1beab35143eb03e6"));
+    (0, uint256("0x00000ffc5446ef4936227f471288c4556dcd6b935e555542a0871c1bdaa5d447"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1526549121, // * UNIX timestamp of last checkpoint block
+    1526573756, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -92,9 +92,9 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x46;
-        pchMessageStart[1] = 0xac;
-        pchMessageStart[2] = 0x50;
+        pchMessageStart[0] = 0x3a;
+        pchMessageStart[1] = 0x19;
+        pchMessageStart[2] = 0xfe;
         pchMessageStart[3] = 0xa8;
         vAlertPubKey = ParseHex("04dc5b12dd48be75da23f06f6738aba86627d704acbeb98f048c63e917851a34b80e05c86cc6b4663175564528cf296f4c4337b5d6c784a38f95456d9011919ec5");
         nDefaultPort = 22030;
@@ -121,15 +121,15 @@ public:
          * Build the genesis block. Note that the output of the genesis coinbase cannot
          * be spent as it did not originally exist in the database.
          *
-         * -a quark-hash -z "HTC to Launch Its Own Cryptocurrency-Focused Smartphone, Exodus" -t 1526549121 -v 0 -p 041e28c90f14d4e5012e65cdbe87d8f7d9026f471ba721e10365aa43a863a66e4f4eed88ff43abf5365070c6fde49de8766eafa09c933ffb9a4c0d7e77103305ff
+         * -a quark-hash -z "HTC to Launch Its Own Cryptocurrency-Focused Smartphone, Exodus" -t 1526573756 -v 0 -p 041e28c90f14d4e5012e65cdbe87d8f7d9026f471ba721e10365aa43a863a66e4f4eed88ff43abf5365070c6fde49de8766eafa09c933ffb9a4c0d7e77103305ff
          * algorithm: quark-hash
          * merkle hash: 1b9a6ff10578f0d369601db5cfa1542ee5055be21374639575dfe46eb68a0d11
          * pszTimestamp: HTC to Launch Its Own Cryptocurrency-Focused Smartphone, Exodus
          * pubkey: 041e28c90f14d4e5012e65cdbe87d8f7d9026f471ba721e10365aa43a863a66e4f4eed88ff43abf5365070c6fde49de8766eafa09c933ffb9a4c0d7e77103305ff
-         * time: 1526549121
+         * time: 1526573756
          * bits: 0x1e0ffff0
          * nonce: 22811910
-         * genesis_hash: 00000899ed127026c5bcb3c6e278546868ad70fb634676fb1beab35143eb03e6
+         * genesis_hash: 00000ffc5446ef4936227f471288c4556dcd6b935e555542a0871c1bdaa5d447
          */
         const char* pszTimestamp = "HTC to Launch Its Own Cryptocurrency-Focused Smartphone, Exodus";
         CMutableTransaction txNew;
@@ -142,12 +142,12 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1526549121;
+        genesis.nTime = 1526573756;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 22811910;
+        genesis.nNonce = 20729725;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000899ed127026c5bcb3c6e278546868ad70fb634676fb1beab35143eb03e6"));
+        assert(hashGenesisBlock == uint256("0x00000ffc5446ef4936227f471288c4556dcd6b935e555542a0871c1bdaa5d447"));
         assert(genesis.hashMerkleRoot == uint256("0x1b9a6ff10578f0d369601db5cfa1542ee5055be21374639575dfe46eb68a0d11"));
 
         // DNS Seeding
@@ -225,11 +225,11 @@ public:
         nMaxMoneyOut = 29300000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1526549121;
+        genesis.nTime = 1526573756;
         genesis.nNonce = 22811910;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000899ed127026c5bcb3c6e278546868ad70fb634676fb1beab35143eb03e6"));
+        assert(hashGenesisBlock == uint256("0x00000ffc5446ef4936227f471288c4556dcd6b935e555542a0871c1bdaa5d447"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -297,13 +297,13 @@ public:
         nMaturity = 10;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         bnProofOfStakeLimit = ~uint256(0) >> 24;
-        genesis.nTime = 1526549121;
+        genesis.nTime = 1526573756;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 20542300;
+        genesis.nNonce = 20542301;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 34925;
-        assert(hashGenesisBlock == uint256("0x56beab6697b2ba5d0160e7a6734e77c2be394d253a053f56b7ef0ef9454ca848"));
+        assert(hashGenesisBlock == uint256("0x180162c7f241b8ec2a7e6d5e07dea2b29a0f636510b37f61d0ffee6f0cfb314e"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.

@@ -106,8 +106,9 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Zest: 1 day
-        nTargetSpacing = 2 * 60;  // Zest: 2 minutes
+        nTargetTimespan = 1 * 60;      // Zest: 1 day
+        nTargetSpacing = 2 * 60;       // Zest: 2 minutes
+        nStakeMinAge = 12 * 60 * 60;   // Zest: 12 hours
         nMaturity = 10;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 29300000 * COIN;
@@ -217,10 +218,11 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Zest: 1 day
-        nTargetSpacing = 2 * 60;  // Zest: 1 minute
+        nTargetTimespan = 1 * 60;        // Zest: 1 day
+        nTargetSpacing = 2 * 60;         // Zest: 2 minutes
+        nStakeMinAge = 10 * 60;          // Zest: 10 minutes
         nLastPOWBlock = 200;
-        nMaturity = 15;
+        nMaturity = 10;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = 29300000 * COIN;
@@ -292,7 +294,10 @@ public:
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // Zest: 1 day
-        nTargetSpacing = 2 * 60;        // Zest: 1 minutes
+        nTargetSpacing = 2 * 60;        // Zest: 2 minutes
+        nStakeMinAge = 10 * 60;          // Zest: 10 minutes
+        nLastPOWBlock = 200;
+        nMaturity = 10;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         bnProofOfStakeLimit = ~uint256(0) >> 24;
         genesis.nTime = 1522340645;
@@ -311,6 +316,7 @@ public:
         fDefaultConsistencyChecks = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
+        fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const

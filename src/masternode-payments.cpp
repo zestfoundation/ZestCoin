@@ -7,6 +7,7 @@
 #include "masternode-payments.h"
 #include "addrman.h"
 #include "masternode-budget.h"
+#include "masternode-devbudget.h"
 #include "masternode-sync.h"
 #include "masternodeman.h"
 #include "masternode-helpers.h"
@@ -246,6 +247,15 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
         }
     }
 
+    // check if it's a dev budget block
+    if (nBlockHeight > Params().LAST_POW_BLOCK() && IsSporkActive(SPORK_17_BUDGET_REWARD)) {
+        if (devbudget.IsTransactionValid(txNew, nBlockHeight))
+            return true;
+
+        LogPrint("masternode","Invalid dev budget payment detected %s\n", txNew.ToString().c_str());
+        return false;
+    }
+
     //check for masternode payee
     if (masternodePayments.IsTransactionValid(txNew, nBlockHeight))
         return true;
@@ -268,6 +278,9 @@ void FillBlockPayee(CMutableTransaction& txNew, CAmount nFees, bool fProofOfStak
         budget.FillBlockPayee(txNew, nFees, fProofOfStake);
     } else {
         masternodePayments.FillBlockPayee(txNew, nFees, fProofOfStake);
+
+        if (pindexPrev->nHeight > Params().LAST_POW_BLOCK() && IsSporkActive(SPORK_17_BUDGET_REWARD))
+            devbudget.FillBlockPayee(txNew, nFees, fProofOfStake);
     }
 }
 

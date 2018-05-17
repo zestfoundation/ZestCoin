@@ -31,11 +31,12 @@ int nSubmittedFinalBudget;
 
 int GetBudgetPaymentCycleBlocks()
 {
-    // Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
-    if (Params().NetworkID() == CBaseChainParams::MAIN) return 43200;
-    //for testing purposes
+    // Amount of blocks in a months period of time (using TargetSpacing)
+    if (Params().NetworkID() == CBaseChainParams::MAIN)
+        return ((24 * 60 * 60) / Params().TargetSpacing()) * 30;
 
-    return 144; //ten times per day
+    //for testing purposes
+    return ((24 * 60 * 60) / Params().TargetSpacing()) / 10; // ten times per day
 }
 
 bool IsBudgetCollateralValid(uint256 nTxCollateralHash, uint256 nExpectedHash, std::string& strError, int64_t& nTime, int& nConf)
@@ -102,7 +103,6 @@ bool IsBudgetCollateralValid(uint256 nTxCollateralHash, uint256 nExpectedHash, s
 void CBudgetManager::CheckOrphanVotes()
 {
     LOCK(cs);
-
 
     std::string strError = "";
     std::map<uint256, CBudgetVote>::iterator it1 = mapOrphanMasternodeBudgetVotes.begin();
@@ -488,7 +488,6 @@ void CBudgetManager::CheckAndRemove()
     // LogPrint("mnbudget", "CBudgetManager::CheckAndRemove - mapFinalizedBudgets cleanup - size after: %d\n", mapFinalizedBudgets.size());
     // LogPrint("mnbudget", "CBudgetManager::CheckAndRemove - mapProposals cleanup - size after: %d\n", mapProposals.size());
     LogPrint("masternode","CBudgetManager::CheckAndRemove - PASSED\n");
-
 }
 
 void CBudgetManager::FillBlockPayee(CMutableTransaction& txNew, CAmount nFees, bool fProofOfStake)
@@ -849,34 +848,34 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
     CAmount nSubsidy = 0;
 
     if (nHeight > 5000 && nHeight <= 25000)
-        nSubsidy = 10.5 * COIN;
+        nSubsidy = 10 * COIN;
     else if (nHeight > 25000 && nHeight <= 1050000)
-        nSubsidy = 7.875 * COIN;
+        nSubsidy = 7.5 * COIN;
     else if (nHeight > 1050000 && nHeight <= 2100000)
-        nSubsidy = 4.2 * COIN;
+        nSubsidy = 4 * COIN;
     else if (nHeight > 2100000 && nHeight <= 3150000)
-        nSubsidy = 3.675 * COIN;
+        nSubsidy = 3.5 * COIN;
     else if (nHeight > 3150000 && nHeight <= 4200000)
-        nSubsidy = 3.15 * COIN;
+        nSubsidy = 3 * COIN;
     else if (nHeight > 4200000 && nHeight <= 5250000)
-        nSubsidy = 2.625 * COIN;
+        nSubsidy = 2.5 * COIN;
     else if (nHeight > 5250000 && nHeight <= 6300000)
-        nSubsidy = 1.575 * COIN;
+        nSubsidy = 1.5 * COIN;
     else if (nHeight > 6300000 && nHeight <= 7350000)
-        nSubsidy = 1.365 * COIN;
+        nSubsidy = 1.3 * COIN;
     else if (nHeight > 7350000 && nHeight <= 8400000)
-        nSubsidy = 1.155 * COIN;
+        nSubsidy = 1.1 * COIN;
     else if (nHeight > 8400000 && nHeight <= 9450000)
-        nSubsidy = 0.945 * COIN;
+        nSubsidy = 0.9 * COIN;
     else if (nHeight > 9450000 && nHeight <= 10500000)
-        nSubsidy = 0.735 * COIN;
+        nSubsidy = 0.7 * COIN;
     else if (nHeight > 10500000 && nHeight <= 11550000)
-        nSubsidy = 0.71526 * COIN;
+        nSubsidy = 0.6812 * COIN;
     else
-        nSubsidy = 0.525 * COIN;
+        nSubsidy = 0.5 * COIN;
 
-    // Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
-    return ((nSubsidy / 100) * 10) * 1440 * 30;
+    // Amount of blocks in a months period of time
+    return ((nSubsidy / 100) * 10) * ((24 * 60 * 60) / Params().TargetSpacing()) * 30;
 }
 
 void CBudgetManager::NewBlock()

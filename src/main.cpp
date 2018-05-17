@@ -1665,13 +1665,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     int64_t ret = 0;
 
     // No rewards till masternode activation.
-    // if (nHeight < Params().LAST_POW_BLOCK() || blockValue == 0)
-    //     return 0;
-    if (blockValue == 0)
-        return 0;
-
-    // Check if we reached coin supply
-    ret = blockValue * 0.20; // 20% of block reward - 5% budget
+    if (nHeight > Params().LAST_POW_BLOCK() && blockValue > 0)
+        ret = blockValue * 0.85; // 85% of block reward - 5% for dev budget
 
     return ret;
 }

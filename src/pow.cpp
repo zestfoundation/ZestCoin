@@ -29,11 +29,11 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     uint256 PastDifficultyAverage;
     uint256 PastDifficultyAveragePrev;
 
-    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || BlockLastSolved->nHeight < PastBlocksMin) {
+    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || BlockLastSolved->nHeight < PastBlocksMin ||
+        (pindexLast->nHeight >= 5000 && pindexLast->nHeight <= 5025)) {
         return Params().ProofOfWorkLimit().GetCompact();
     }
 
-    // if (pindexLast->nHeight > Params().LAST_POW_BLOCK()) {
     uint256 bnTargetLimit;
     if (pindexLast->nHeight < Params().LAST_POW_BLOCK())
         bnTargetLimit = Params().ProofOfWorkLimit();

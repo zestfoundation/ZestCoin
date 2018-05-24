@@ -11,6 +11,9 @@ Zest (ZEST) is a sustainable cryptocurrency modeled after Satoshi Nakamoto’s v
 More information at [zestcoin.io](http://www.zestcoin.io)
 
 ### Coin Specs
+
+|                             |                 |
+|-----------------------------|-----------------|
 | Block Time                  | 120 Seconds     |
 | Premine                     | 1,500,000 ZEST  |
 | Max Coin Supply (PoW Phase) | 1,500,000 ZEST  |

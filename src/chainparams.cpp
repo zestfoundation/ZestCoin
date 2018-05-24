@@ -114,7 +114,7 @@ public:
         nMaxMoneyOut = 29300000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 5000;
+        nLastPOWBlock = 5025;
         nModifierUpdateBlock = 1; // we use the version 2 for ZEST
 
         /**

@@ -115,6 +115,9 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
 {
     /* Open CSS when configured */
     this->setStyleSheet(GUIUtil::loadStyleSheet());
+    this->setFixedSize(QSize(1530, 863));
+    this->setWindowFlags(windowFlags() ^ Qt::WindowMaximizeButtonHint);
+
 
     GUIUtil::restoreWindowGeometry("nWindow", QSize(850, 550), this);
 
@@ -229,17 +232,26 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
     // See https://qt-project.org/doc/qt-4.8/gallery.html
     QString curStyle = QApplication::style()->metaObject()->className();
     if (curStyle == "QWindowsStyle" || curStyle == "QWindowsXPStyle") {
-        progressBar->setStyleSheet("QProgressBar { background-color: #F8F8F8; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #00CCFF, stop: 1 #33CCFF); border-radius: 7px; margin: 0px; }");
+        progressBar->setStyleSheet("QProgressBar { background-color: #000; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #00CCFF, stop: 1 #33CCFF); border-radius: 7px; margin: 0px; }");
     }
 
     // statusBar left spacer
     statusBarSpacer = new QWidget();
-    statusBarSpacer->setFixedWidth(200);
+    statusBarSpacer->setFixedWidth(235);
     statusBarSpacer->setHidden(1);
     statusBarSpacer->setVisible(1);
 
+    statusBarSpacer2 = new QWidget();
+    statusBarSpacer2->setFixedWidth(190);
+    statusBarSpacer2->setHidden(1);
+    statusBarSpacer2->setVisible(1);
+
+
+
+
     statusBar()->addWidget(statusBarSpacer);
     statusBar()->addWidget(progressBarLabel);
+    statusBar()->addWidget(statusBarSpacer2);
     statusBar()->addWidget(progressBar);
     statusBar()->addPermanentWidget(frameBlocks);
 
@@ -299,7 +311,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 {
     QActionGroup* tabGroup = new QActionGroup(this);
 
-    overviewAction = new QAction(QIcon(":/icons/toolbar_spacer"), tr("&Overview"), this);
+    overviewAction = new QAction(QIcon(":/icons/overview"), tr("&Overview"), this);
     overviewAction->setStatusTip(tr("Show general overview of wallet"));
     overviewAction->setToolTip(overviewAction->statusTip());
     overviewAction->setCheckable(true);
@@ -310,7 +322,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 #endif
     tabGroup->addAction(overviewAction);
 
-    sendCoinsAction = new QAction(QIcon(":/icons/toolbar_spacer"), tr("&Send"), this);
+    sendCoinsAction = new QAction(QIcon(":/icons/sendtoolbar"), tr("&Send"), this);
     sendCoinsAction->setStatusTip(tr("Send coins to a ZEST address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
@@ -321,7 +333,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 #endif
     tabGroup->addAction(sendCoinsAction);
 
-    receiveCoinsAction = new QAction(QIcon(":/icons/toolbar_spacer"), tr("&Receive"), this);
+    receiveCoinsAction = new QAction(QIcon(":/icons/receivetoolbar"), tr("&Receive"), this);
     receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and zest: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
@@ -332,7 +344,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 #endif
     tabGroup->addAction(receiveCoinsAction);
 
-    historyAction = new QAction(QIcon(":/icons/toolbar_spacer"), tr("&Transactions"), this);
+    historyAction = new QAction(QIcon(":/icons/history"), tr("&Transactions"), this);
     historyAction->setStatusTip(tr("Browse transaction history"));
     historyAction->setToolTip(historyAction->statusTip());
     historyAction->setCheckable(true);
@@ -346,7 +358,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 #ifdef ENABLE_WALLET
     QSettings settings;
     if (settings.value("fShowMasternodesTab").toBool()) {
-        masternodeAction = new QAction(QIcon(":/icons/toolbar_spacer"), tr("&Masternodes"), this);
+        masternodeAction = new QAction(QIcon(":/icons/masternodes"), tr("&Masternodes"), this);
         masternodeAction->setStatusTip(tr("Browse masternodes"));
         masternodeAction->setToolTip(masternodeAction->statusTip());
         masternodeAction->setCheckable(true);
@@ -486,8 +498,11 @@ void BitcoinGUI::createMenuBar()
     // Get the main window's menu bar on other platforms
     appMenuBar = menuBar();
 #endif
+    appMenuBar->setStyleSheet("min-height:27px;");
 
     // Configure the menus
+
+
     QMenu* file = appMenuBar->addMenu(tr("&File"));
     if (walletFrame) {
         file->addAction(openAction);
@@ -504,6 +519,7 @@ void BitcoinGUI::createMenuBar()
         file->addSeparator();
     }
     file->addAction(quitAction);
+
 
     QMenu* settings = appMenuBar->addMenu(tr("&Settings"));
     if (walletFrame) {
@@ -538,47 +554,70 @@ void BitcoinGUI::createMenuBar()
     help->addAction(aboutQtAction);
 }
 
+
+
 void BitcoinGUI::createToolBars()
 {
     if (walletFrame) {
         QToolBar* toolbar = new QToolBar(tr("Tabs toolbar"));
         toolbar->setObjectName("Main-Toolbar"); // Name for CSS addressing
-        toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        toolbar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+
+        QLabel* header = new QLabel();
+              header->setMinimumSize(220, 20);
+              header->setMaximumSize(220, 20);
+              header->setAlignment(Qt::AlignTop);
+              header->setStyleSheet("background-color:transparent;");
+              header->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+        toolbar->addWidget(header);
+
+
         toolbar->addAction(overviewAction);
         toolbar->addAction(sendCoinsAction);
         toolbar->addAction(receiveCoinsAction);
+
+        toolbar->setIconSize(QSize(70,48));
+
         toolbar->addAction(historyAction);
         QSettings settings;
         if (settings.value("fShowMasternodesTab").toBool()) {
             toolbar->addAction(masternodeAction);
         }
+
         toolbar->setOrientation(Qt::Vertical);
         toolbar->setMovable(false); // remove unused icon in upper left corner
         toolbar->setFloatable(false);
+        toolbar->setIconSize(QSize(40,40));
         overviewAction->setChecked(true);
+
 
         // Create left side bottom toolbar items
 #ifdef ENABLE_WALLET
         labelBalance = new QLabel;
         labelBalance->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        labelBalance->setStyleSheet(".QLabel { font-size: 16px; margin-left: 20px; line-height: 24px; }");
+        labelBalance->setStyleSheet(".QLabel { font-size: 16px; margin-left: 55px; line-height: 24px; }");
 #endif
 
         QSpacerItem* verticalSpacer_1 = new QSpacerItem(40, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
         QSpacerItem* verticalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         QFrame* frameVersion = new QFrame;
-        frameVersion->setContentsMargins(5, 5, 5, 5);
+        frameVersion->setContentsMargins(0, 5, 5, 5);
         frameVersion->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
         frameVersion->setStyleSheet(".QFrame { background-color: #000; }");
+
         QHBoxLayout* frameVersionLayout = new QHBoxLayout(frameVersion);
-        frameVersionLayout->setContentsMargins(3, 0, 3, 0);
-        frameVersionLayout->setSpacing(3);
+        frameVersionLayout->setContentsMargins(0, 7, 0, 7);
+        frameVersionLayout->setSpacing(-10);
+
         QLabel* labelLogo = new QLabel;
-        labelLogo->setPixmap(QIcon(":/icons/bitcoin").pixmap(24, 24));
+        labelLogo->setPixmap(QIcon(":/icons/bitcoin").pixmap(34, 34));
+        labelLogo->setStyleSheet(".QLabel { margin-left: 70px; }");
+
         QLabel* labelVersion = new QLabel;
         labelVersion->setText(tr("Version") + " v" + QString::fromStdString(FormatVersion(CLIENT_VERSION)));
-        labelVersion->setStyleSheet(".QLabel { color: #fff; }");
+        labelVersion->setStyleSheet(".QLabel { color: #808080; }");
 
         frameVersionLayout->addWidget(labelLogo);
         frameVersionLayout->addWidget(labelVersion);
@@ -590,10 +629,11 @@ void BitcoinGUI::createToolBars()
         QFrame* frameToolbar = new QFrame;
         frameToolbar->setContentsMargins(0, 0, 0, 0);
         frameToolbar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
-        frameToolbar->setStyleSheet(".QFrame { max-width: 200px; background-color: #000; }");
+        frameToolbar->setStyleSheet(".QFrame { min-width: 220px; margin-left:-0px; background-color: #000; }");
+
         QVBoxLayout* frameToolbarLayout = new QVBoxLayout(frameToolbar);
-        frameToolbarLayout->setContentsMargins(3, 0, 3, 0);
-        frameToolbarLayout->setSpacing(3);
+        frameToolbarLayout->setContentsMargins(0, 0, 0, 0);
+        frameToolbarLayout->setSpacing(0);
 
         frameToolbarLayout->addWidget(toolbar);
         frameToolbarLayout->addStretch();
@@ -1132,6 +1172,8 @@ void BitcoinGUI::closeEvent(QCloseEvent* event)
     QMainWindow::closeEvent(event);
 }
 
+
+
 #ifdef ENABLE_WALLET
 void BitcoinGUI::incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address)
 {
@@ -1156,7 +1198,7 @@ void BitcoinGUI::incomingTransaction(const QString& date, int unit, const CAmoun
 void BitcoinGUI::setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
                               const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance)
 {
-    labelBalance->setText("<span style='font-size:12px;'>" + tr("BALANCE") + "</span><br><br>" +
+    labelBalance->setText("<span style='font-size:14px; color:#808080;'>" + tr("BALANCE") + "</span><br><br>" + "<span style='font-size:18px;'>" +
         BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - immatureBalance, false, BitcoinUnits::separatorNever));
 }
 #endif // ENABLE_WALLET

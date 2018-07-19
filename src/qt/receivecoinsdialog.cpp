@@ -35,7 +35,10 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(QWidget* parent) : QDialog(parent),
 #endif
 
     ui->reqLabel->setAttribute(Qt::WA_MacShowFocusRect, 0);
+    ui->reqLabel->setPlaceholderText(tr("Wallet to request"));
     ui->reqMessage->setAttribute(Qt::WA_MacShowFocusRect, 0);
+    ui->reqMessage->setPlaceholderText(tr("Note"));
+
 
     // context menu actions
     QAction* copyLabelAction = new QAction(tr("Copy label"), this);
@@ -95,7 +98,7 @@ void ReceiveCoinsDialog::clear()
     ui->reqAmount->clear();
     ui->reqLabel->setText("");
     ui->reqMessage->setText("");
-    ui->reuseAddress->setChecked(false);
+    ui->reuseAddress->setChecked(true);
     updateDisplayUnit();
 }
 

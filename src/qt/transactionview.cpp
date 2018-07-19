@@ -39,7 +39,7 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
 {
     QSettings settings;
     // Build filter row
-    setContentsMargins(0, 0, 0, 0);
+    setContentsMargins(15, 15, 15, 15);
 
     QHBoxLayout* hlayout = new QHBoxLayout();
     hlayout->setContentsMargins(0, 0, 0, 0);
@@ -197,6 +197,9 @@ void TransactionView::setModel(WalletModel* model)
         transactionView->setSortingEnabled(true);
         transactionView->sortByColumn(TransactionTableModel::Date, Qt::DescendingOrder);
         transactionView->verticalHeader()->hide();
+        transactionView->setShowGrid(false);
+        transactionView->verticalHeader()->setDefaultSectionSize(50);
+        transactionView->verticalHeader()->setMinimumSectionSize(50);
 
         transactionView->setColumnWidth(TransactionTableModel::Status, STATUS_COLUMN_WIDTH);
         transactionView->setColumnWidth(TransactionTableModel::Watchonly, WATCHONLY_COLUMN_WIDTH);

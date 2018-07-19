@@ -75,6 +75,9 @@ MultiSend will not be activated unless you have clicked Activate</string>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QCheckBox" name="multiSendStakeCheckBox">
+           <property name="styleSheet">
+            <string notr="true">color:white;</string>
+           </property>
            <property name="text">
             <string>Send For Stakes</string>
            </property>
@@ -82,6 +85,9 @@ MultiSend will not be activated unless you have clicked Activate</string>
          </item>
          <item>
           <widget class="QCheckBox" name="multiSendMasternodeCheckBox">
+           <property name="styleSheet">
+            <string notr="true">color:white;</string>
+           </property>
            <property name="text">
             <string>Send For Masternode Rewards</string>
            </property>

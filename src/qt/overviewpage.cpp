@@ -25,7 +25,7 @@
 
 #define DECORATION_SIZE 48
 #define ICON_OFFSET 16
-#define NUM_ITEMS 9
+#define NUM_ITEMS 10
 
 extern CWallet* pwalletMain;
 

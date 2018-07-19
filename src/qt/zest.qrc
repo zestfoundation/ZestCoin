@@ -1,4 +1,4 @@
-<!DOCTYPE RCC><RCC version="1.0">
+<RCC>
     <qresource prefix="/icons">
         <file alias="bitcoin">res/icons/bitcoin.png</file>
         <file alias="address-book">res/icons/address-book.png</file>
@@ -53,6 +53,12 @@
         <file alias="staking_inactive">res/icons/staking_inactive.png</file>
         <file alias="toolbar_spacer">res/icons/toolbar_spacer.png</file>
         <file alias="warning">res/icons/warning.png</file>
+        <file alias="alarm-clock">res/icons/alarm-clock.png</file>
+        <file alias="sendtoolbar">res/icons/sendtoolbar.png</file>
+        <file alias="receivetoolbar">res/icons/receivetoolbar.png</file>
+        <file alias="overview">res/icons/overview.png</file>
+        <file alias="history">res/icons/history.png</file>
+        <file alias="masternodes">res/icons/masternodes.png</file>
     </qresource>
     <qresource prefix="/css">
         <file alias="default">res/css/default.css</file>
@@ -69,6 +75,7 @@
         <file alias="walletFrame">res/images/walletFrame.png</file>
         <file alias="splash">res/images/splash.png</file>
         <file alias="splash_testnet">res/images/splash_testnet.png</file>
+        <file alias="logo_points">res/images/logo_points.png</file>
     </qresource>
     <qresource prefix="/movies">
         <file alias="spinner-000">res/movies/spinner-000.png</file>

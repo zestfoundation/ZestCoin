@@ -182,6 +182,7 @@ BITCOIN_QT_H = \
 RES_ICONS = \
   qt/res/icons/add.png \
   qt/res/icons/address-book.png \
+  qt/res/icons/alarm-clock.png \
   qt/res/icons/bitcoin.ico \
   qt/res/icons/bitcoin.png \
   qt/res/icons/bitcoin_testnet.ico \
@@ -211,12 +212,15 @@ RES_ICONS = \
   qt/res/icons/key.png \
   qt/res/icons/lock_closed.png \
   qt/res/icons/lock_open.png \
+  qt/res/icons/masternodes.png \
   qt/res/icons/qrcode.png \
   qt/res/icons/quit.png \
   qt/res/icons/receive.png \
+  qt/res/icons/receivetoolbar.png \
   qt/res/icons/receive_active.png \
   qt/res/icons/remove.png \
   qt/res/icons/send.png \
+  qt/res/icons/sendtoolbar.png \
   qt/res/icons/send_active.png \
   qt/res/icons/staking_active.png \
   qt/res/icons/staking_inactive.png \
@@ -235,7 +239,9 @@ RES_ICONS = \
   qt/res/icons/unit_tzest.png \
   qt/res/icons/unit_tmzest.png \
   qt/res/icons/unit_tuzest.png \
-  qt/res/icons/warning.png
+  qt/res/icons/warning.png \
+  qt/res/icons/overview.png \
+  qt/res/icons/history.png
 
 BITCOIN_QT_CPP = \
   qt/bitcoinaddressvalidator.cpp \
@@ -309,7 +315,8 @@ RES_IMAGES = \
   qt/res/images/leftArrow_small_dark.png \
   qt/res/images/rightArrow_small_dark.png \
   qt/res/images/qtreeview_selected.png \
-  qt/res/images/walletFrame.png
+  qt/res/images/walletFrame.png \
+  qt/res/images/logo_points.png
 
 RES_CSS = \
   qt/res/css/default.css
@@ -417,3 +424,4 @@ moc_%.cpp: %.h
 	@test -f $(LRELEASE)
 	@$(MKDIR_P) $(@D)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@
+

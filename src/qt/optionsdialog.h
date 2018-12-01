@@ -11,6 +11,7 @@
 
 class OptionsModel;
 class QValidatedLineEdit;
+class QLineEdit;
 
 QT_BEGIN_NAMESPACE
 class QDataWidgetMapper;
@@ -49,10 +50,10 @@ private slots:
 
     void showRestartWarning(bool fPersistent = false);
     void clearStatusLabel();
-    void doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPort);
+    void doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, QLineEdit* pUiProxyPort);
 
 signals:
-    void proxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPort);
+    void proxyIpChecks(QValidatedLineEdit* pUiProxyIp, QLineEdit* pUiProxyPort);
 
 private:
     Ui::OptionsDialog* ui;

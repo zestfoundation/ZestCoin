@@ -784,7 +784,6 @@ QString loadStyleSheet()
     QSettings settings;
     QString cssName;
 
-    settings.setValue("fCSSexternal", false);
     cssName = QString(":/css/default");
 
     QFile qFile(cssName);

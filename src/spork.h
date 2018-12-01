@@ -37,8 +37,8 @@ using namespace boost;
 #define SPORK_12_RECONSIDER_BLOCKS 10011
 #define SPORK_13_ENABLE_SUPERBLOCKS 10012
 #define SPORK_14_NEW_PROTOCOL_ENFORCEMENT 10013
-#define SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2 10014
-#define SPORK_16_MN_WINNER_MINIMUM_AGE 10015
+#define SPORK_15_UNUSED 10014
+#define SPORK_16_UNUSED 10015
 #define SPORK_17_BUDGET_REWARD 10016
 
 #define SPORK_2_SWIFTTX_DEFAULT 978307200                         //2001-1-1
@@ -52,10 +52,8 @@ using namespace boost;
 #define SPORK_12_RECONSIDER_BLOCKS_DEFAULT 0
 #define SPORK_13_ENABLE_SUPERBLOCKS_DEFAULT 4070908800            //OFF
 #define SPORK_14_NEW_PROTOCOL_ENFORCEMENT_DEFAULT 4070908800      //OFF
-#define SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2_DEFAULT 4070908800    //OFF
-#define SPORK_16_MN_WINNER_MINIMUM_AGE_DEFAULT 8000               // Age in seconds. This should be > MASTERNODE_REMOVAL_SECONDS to avoid
-                                                                  // misconfigured new nodes in the list.
-                                                                  // Set this to zero to emulate classic behaviour
+#define SPORK_15_UNUSED_DEFAULT 4070908800    //OFF
+#define SPORK_16_UNUSED_DEFAULT 4070908800    //OFF
 #define SPORK_17_BUDGET_REWARD_DEFAULT 0                          // Enable budget fixed reward
 
 class CSporkMessage;

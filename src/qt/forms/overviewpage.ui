@@ -6,26 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>800</height>
+    <width>978</width>
+    <height>841</height>
    </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1280</width>
-    <height>800</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>1280</width>
-    <height>800</height>
+    <width>960</width>
+    <height>682</height>
    </size>
   </property>
   <property name="font">
@@ -58,7 +46,7 @@
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>5235237</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="frameShape">
@@ -97,7 +85,7 @@
               <number>0</number>
              </property>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
+              <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
                <property name="spacing">
                 <number>33</number>
                </property>
@@ -105,7 +93,7 @@
                 <number>14</number>
                </property>
                <property name="topMargin">
-                <number>20</number>
+                <number>0</number>
                </property>
                <property name="rightMargin">
                 <number>12</number>
@@ -116,12 +104,6 @@
                   <size>
                    <width>0</width>
                    <height>0</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>400</width>
-                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="autoFillBackground">
@@ -348,12 +330,6 @@
                   <size>
                    <width>230</width>
                    <height>0</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>230</width>
-                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="autoFillBackground">
@@ -984,12 +960,6 @@
                 <size>
                  <width>0</width>
                  <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>510</width>
-                 <height>730</height>
                 </size>
                </property>
                <property name="autoFillBackground">

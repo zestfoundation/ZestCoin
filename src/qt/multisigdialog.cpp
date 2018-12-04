@@ -866,7 +866,7 @@ void MultisigDialog::on_addAddressButton_clicked()
     QLabel* addressLabel = new QLabel(addressFrame);
     addressLabel->setObjectName(QStringLiteral("addressLabel"));
     addressLabel->setText(QApplication::translate("MultisigDialog", strprintf("Address / Key %i:", ui->addressList->count()+1).c_str() , 0));
-    addressLabel->setStyleSheet("color:black;");
+    addressLabel->setStyleSheet("color:white;");
     addressLayout->addWidget(addressLabel);
 
     QValidatedLineEdit* address = new QValidatedLineEdit(addressFrame);
@@ -1010,10 +1010,10 @@ void MultisigDialog::on_addDestinationButton_clicked()
     destinationAmount->setObjectName(QStringLiteral("destinationAmount"));
 
     destinationAddressLabel->setText(QApplication::translate("MultisigDialog", strprintf("%i. Address: ", ui->destinationsList->count()+1).c_str(), 0));
-    destinationAddressLabel->setStyleSheet("color:black;");
+    destinationAddressLabel->setStyleSheet("color:white;");
 
     destinationAmountLabel->setText(QApplication::translate("MultisigDialog", "Amount: ", 0));
-    destinationAmountLabel->setStyleSheet("color:black;");
+    destinationAmountLabel->setStyleSheet("color:white;");
 
     destinationLayout->addWidget(destinationAmount);
 

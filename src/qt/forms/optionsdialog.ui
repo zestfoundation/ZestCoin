@@ -32,9 +32,6 @@
          <property name="toolTip">
           <string>Automatically start Zest after logging in to the system.</string>
          </property>
-         <property name="styleSheet">
-          <string notr="true">color:#fff;</string>
-         </property>
          <property name="text">
           <string>&amp;Start Zest on system login</string>
          </property>
@@ -44,9 +41,6 @@
         <layout class="QHBoxLayout" name="horizontalLayout_2_Main">
          <item>
           <widget class="QLabel" name="databaseCacheLabel">
-           <property name="styleSheet">
-            <string notr="true">color:#fff;</string>
-           </property>
            <property name="text">
             <string>Size of &amp;database cache</string>
            </property>
@@ -63,9 +57,6 @@
          </item>
          <item>
           <widget class="QLabel" name="databaseCacheUnitLabel">
-           <property name="styleSheet">
-            <string notr="true">color:#fff;</string>
-           </property>
            <property name="text">
             <string>MB</string>
            </property>
@@ -93,9 +84,6 @@
         <layout class="QHBoxLayout" name="horizontalLayout_3_Main">
          <item>
           <widget class="QLabel" name="threadsScriptVerifLabel">
-           <property name="styleSheet">
-            <string notr="true">color:#fff;</string>
-           </property>
            <property name="text">
             <string>Number of script &amp;verification threads</string>
            </property>
@@ -153,9 +141,6 @@
         <layout class="QHBoxLayout" name="horizontalLayout_2_Wallet">
          <item>
           <widget class="QLabel" name="labelStakeSplitThresholdText">
-           <property name="styleSheet">
-            <string notr="true">color:#fff;</string>
-           </property>
            <property name="text">
             <string>Stake split threshold:</string>
            </property>
@@ -175,9 +160,6 @@
        </item>
        <item>
         <widget class="QGroupBox" name="groupBox">
-         <property name="styleSheet">
-          <string notr="true">color:#fff;</string>
-         </property>
          <property name="title">
           <string>Expert</string>
          </property>
@@ -186,9 +168,6 @@
            <widget class="QCheckBox" name="coinControlFeatures">
             <property name="toolTip">
              <string>Whether to show coin control features or not.</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color:#fff;</string>
             </property>
             <property name="text">
              <string>Enable coin &amp;control features</string>
@@ -200,9 +179,6 @@
             <property name="toolTip">
              <string>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</string>
             </property>
-            <property name="styleSheet">
-             <string notr="true">color:#fff;</string>
-            </property>
             <property name="text">
              <string>Show Masternodes Tab</string>
             </property>
@@ -212,9 +188,6 @@
            <widget class="QCheckBox" name="spendZeroConfChange">
             <property name="toolTip">
              <string>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color:#fff;</string>
             </property>
             <property name="text">
              <string>&amp;Spend unconfirmed change</string>
@@ -249,9 +222,6 @@
          <property name="toolTip">
           <string>Automatically open the Zest client port on the router. This only works when your router supports UPnP and it is enabled.</string>
          </property>
-         <property name="styleSheet">
-          <string notr="true">color:#fff;</string>
-         </property>
          <property name="text">
           <string>Map port using &amp;UPnP</string>
          </property>
@@ -261,9 +231,6 @@
         <widget class="QCheckBox" name="allowIncoming">
          <property name="toolTip">
           <string>Accept connections from outside</string>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:#fff;</string>
          </property>
          <property name="text">
           <string>Allow incoming connections</string>
@@ -275,9 +242,6 @@
          <property name="toolTip">
           <string>Connect to the Zest network through a SOCKS5 proxy.</string>
          </property>
-         <property name="styleSheet">
-          <string notr="true">color:#fff;</string>
-         </property>
          <property name="text">
           <string>&amp;Connect through SOCKS5 proxy (default proxy):</string>
          </property>
@@ -287,9 +251,6 @@
         <layout class="QHBoxLayout" name="horizontalLayout_1_Network">
          <item>
           <widget class="QLabel" name="proxyIpLabel">
-           <property name="styleSheet">
-            <string notr="true">color:#fff;</string>
-           </property>
            <property name="text">
             <string>Proxy &amp;IP:</string>
            </property>
@@ -322,9 +283,6 @@
          </item>
          <item>
           <widget class="QLabel" name="proxyPortLabel">
-           <property name="styleSheet">
-            <string notr="true">color:#fff;</string>
-           </property>
            <property name="text">
             <string>&amp;Port:</string>
            </property>
@@ -395,9 +353,6 @@
          <property name="toolTip">
           <string>Show only a tray icon after minimizing the window.</string>
          </property>
-         <property name="styleSheet">
-          <string notr="true">color:#fff;</string>
-         </property>
          <property name="text">
           <string>&amp;Minimize to the tray instead of the taskbar</string>
          </property>
@@ -407,9 +362,6 @@
         <widget class="QCheckBox" name="minimizeOnClose">
          <property name="toolTip">
           <string>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</string>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:#fff;</string>
          </property>
          <property name="text">
           <string>M&amp;inimize on close</string>
@@ -440,9 +392,6 @@
         <layout class="QHBoxLayout" name="horizontalLayout_1_Display">
          <item>
           <widget class="QLabel" name="langLabel">
-           <property name="styleSheet">
-            <string notr="true">color:#fff;</string>
-           </property>
            <property name="text">
             <string>User Interface &amp;language:</string>
            </property>
@@ -474,9 +423,6 @@
         <layout class="QHBoxLayout" name="horizontalLayout_2_Display">
          <item>
           <widget class="QLabel" name="unitLabel">
-           <property name="styleSheet">
-            <string notr="true">color:#fff;</string>
-           </property>
            <property name="text">
             <string>&amp;Unit to show amounts in:</string>
            </property>
@@ -501,9 +447,6 @@
         <layout class="QHBoxLayout" name="horizontalLayout_5_Display">
          <item>
           <widget class="QLabel" name="digitsLabel">
-           <property name="styleSheet">
-            <string notr="true">color:#fff;</string>
-           </property>
            <property name="text">
             <string>Decimal digits</string>
            </property>
@@ -515,14 +458,24 @@
         </layout>
        </item>
        <item>
+        <widget class="QCheckBox" name="checkBoxHideZeroBalances">
+         <property name="toolTip">
+          <string>Hide empty balances</string>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>Hide empty balances</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3_Display">
          <item>
           <widget class="QLabel" name="thirdPartyTxUrlsLabel">
            <property name="toolTip">
             <string>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</string>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color:#fff;</string>
            </property>
            <property name="text">
             <string>Third party transaction URLs</string>
@@ -565,9 +518,6 @@
        <layout class="QHBoxLayout" name="horizontalLayout_Bottom">
         <item>
          <widget class="QLabel" name="overriddenByCommandLineInfoLabel">
-          <property name="styleSheet">
-           <string notr="true">color:#fff;</string>
-          </property>
           <property name="text">
            <string>Active command-line options that override above options:</string>
           </property>

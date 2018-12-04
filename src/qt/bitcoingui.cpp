@@ -223,21 +223,12 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
 
     // statusBar left spacer
     statusBarSpacer = new QWidget();
-    statusBarSpacer->setFixedWidth(235);
+    statusBarSpacer->setFixedWidth(200);
     statusBarSpacer->setHidden(1);
     statusBarSpacer->setVisible(1);
 
-    statusBarSpacer2 = new QWidget();
-    statusBarSpacer2->setFixedWidth(190);
-    statusBarSpacer2->setHidden(1);
-    statusBarSpacer2->setVisible(1);
-
-
-
-
     statusBar()->addWidget(statusBarSpacer);
     statusBar()->addWidget(progressBarLabel);
-    statusBar()->addWidget(statusBarSpacer2);
     statusBar()->addWidget(progressBar);
     statusBar()->addPermanentWidget(frameBlocks);
 
@@ -480,11 +471,8 @@ void BitcoinGUI::createMenuBar()
     // Get the main window's menu bar on other platforms
     appMenuBar = menuBar();
 #endif
-    appMenuBar->setStyleSheet("min-height:27px;");
 
     // Configure the menus
-
-
     QMenu* file = appMenuBar->addMenu(tr("&File"));
     if (walletFrame) {
         file->addAction(openAction);
@@ -501,7 +489,6 @@ void BitcoinGUI::createMenuBar()
         file->addSeparator();
     }
     file->addAction(quitAction);
-
 
     QMenu* settings = appMenuBar->addMenu(tr("&Settings"));
     if (walletFrame) {
@@ -536,8 +523,6 @@ void BitcoinGUI::createMenuBar()
     help->addAction(aboutQtAction);
 }
 
-
-
 void BitcoinGUI::createToolBars()
 {
     if (walletFrame) {
@@ -553,8 +538,6 @@ void BitcoinGUI::createToolBars()
               header->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
         toolbar->addWidget(header);
-
-
         toolbar->addAction(overviewAction);
         toolbar->addAction(sendCoinsAction);
         toolbar->addAction(receiveCoinsAction);
@@ -572,7 +555,6 @@ void BitcoinGUI::createToolBars()
         toolbar->setFloatable(false);
         toolbar->setIconSize(QSize(40,40));
         overviewAction->setChecked(true);
-
 
         // Create left side bottom toolbar items
 #ifdef ENABLE_WALLET
@@ -1159,8 +1141,6 @@ void BitcoinGUI::closeEvent(QCloseEvent* event)
 #endif
     QMainWindow::closeEvent(event);
 }
-
-
 
 #ifdef ENABLE_WALLET
 void BitcoinGUI::incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address)

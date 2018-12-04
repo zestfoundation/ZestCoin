@@ -6,56 +6,38 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>953</width>
-    <height>714</height>
+    <width>962</width>
+    <height>616</height>
    </rect>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_5">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0">
+    <layout class="QVBoxLayout" name="verticalLayout_Master" stretch="1">
      <property name="spacing">
       <number>0</number>
      </property>
      <item>
       <widget class="QFrame" name="frame_BG">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0">
-        <property name="spacing">
-         <number>28</number>
-        </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
         <property name="leftMargin">
-         <number>14</number>
+         <number>6</number>
         </property>
         <property name="topMargin">
-         <number>40</number>
+         <number>6</number>
         </property>
         <property name="rightMargin">
-         <number>17</number>
+         <number>6</number>
         </property>
         <property name="bottomMargin">
-         <number>60</number>
+         <number>6</number>
         </property>
         <item>
-         <widget class="QFrame" name="framePayment">
+         <widget class="QFrame" name="frame2">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>580</width>
-            <height>600</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background:#1f2021;</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -64,489 +46,196 @@
            <enum>QFrame::Sunken</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
-           <property name="spacing">
-            <number>22</number>
-           </property>
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>19</number>
-           </property>
-           <property name="rightMargin">
-            <number>22</number>
-           </property>
-           <property name="bottomMargin">
-            <number>22</number>
-           </property>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_4">
-             <property name="leftMargin">
-              <number>10</number>
-             </property>
-             <property name="topMargin">
-              <number>10</number>
-             </property>
-             <property name="rightMargin">
-              <number>10</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="labelTitle">
-               <property name="styleSheet">
-                <string notr="true">color:#fff; font-size:30px; font-weight:bold;</string>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="7" column="2">
+              <widget class="QCheckBox" name="reuseAddress">
+               <property name="toolTip">
+                <string>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</string>
                </property>
                <property name="text">
-                <string>Request your coins</string>
+                <string>R&amp;euse an existing receiving address (not recommended)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="toolTip">
+                <string>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Zest network.</string>
+               </property>
+               <property name="text">
+                <string>&amp;Message:</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                </property>
-               <property name="wordWrap">
-                <bool>true</bool>
-               </property>
-               <property name="textInteractionFlags">
-                <set>Qt::NoTextInteraction</set>
+               <property name="buddy">
+                <cstring>reqMessage</cstring>
                </property>
               </widget>
              </item>
-             <item>
-              <widget class="QLabel" name="labelSubtitle">
-               <property name="styleSheet">
-                <string notr="true">color:#808181; font-size:14px; font-weight: normal;</string>
+             <item row="4" column="2">
+              <widget class="QLineEdit" name="reqLabel">
+               <property name="toolTip">
+                <string>An optional label to associate with the new receiving address.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="2">
+              <widget class="QLineEdit" name="reqMessage">
+               <property name="toolTip">
+                <string>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Zest network.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="toolTip">
+                <string>An optional label to associate with the new receiving address.</string>
                </property>
                <property name="text">
-                <string>You may request zest coins worldwide through a wallet-to-wallet transfer using your Zest wallet.</string>
+                <string>&amp;Label:</string>
                </property>
-               <property name="wordWrap">
-                <bool>true</bool>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                </property>
-               <property name="textInteractionFlags">
-                <set>Qt::NoTextInteraction</set>
+               <property name="buddy">
+                <cstring>reqLabel</cstring>
                </property>
               </widget>
              </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
-             <property name="leftMargin">
-              <number>10</number>
-             </property>
-             <item>
-              <layout class="QGridLayout" name="gridLayout">
-               <property name="verticalSpacing">
-                <number>53</number>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label">
+               <property name="toolTip">
+                <string>An optional amount to request. Leave this empty or zero to not request a specific amount.</string>
                </property>
-               <item row="6" column="1">
-                <widget class="QLineEdit" name="reqMessage">
-                 <property name="toolTip">
-                  <string>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Zest network.</string>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background:transparent; margin-bottom:2px solid; margin-color: #046B5B;
-</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="1">
-                <widget class="QCheckBox" name="reuseAddress">
-                 <property name="palette">
-                  <palette>
-                   <active>
-                    <colorrole role="WindowText">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>255</red>
-                       <green>255</green>
-                       <blue>255</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Button">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>31</red>
-                       <green>32</green>
-                       <blue>33</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Text">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>255</red>
-                       <green>255</green>
-                       <blue>255</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="ButtonText">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>255</red>
-                       <green>255</green>
-                       <blue>255</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Base">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>31</red>
-                       <green>32</green>
-                       <blue>33</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Window">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>31</red>
-                       <green>32</green>
-                       <blue>33</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                   </active>
-                   <inactive>
-                    <colorrole role="WindowText">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>255</red>
-                       <green>255</green>
-                       <blue>255</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Button">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>31</red>
-                       <green>32</green>
-                       <blue>33</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Text">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>255</red>
-                       <green>255</green>
-                       <blue>255</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="ButtonText">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>255</red>
-                       <green>255</green>
-                       <blue>255</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Base">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>31</red>
-                       <green>32</green>
-                       <blue>33</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Window">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>31</red>
-                       <green>32</green>
-                       <blue>33</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                   </inactive>
-                   <disabled>
-                    <colorrole role="WindowText">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>255</red>
-                       <green>255</green>
-                       <blue>255</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Button">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>31</red>
-                       <green>32</green>
-                       <blue>33</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Text">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>255</red>
-                       <green>255</green>
-                       <blue>255</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="ButtonText">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>255</red>
-                       <green>255</green>
-                       <blue>255</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Base">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>31</red>
-                       <green>32</green>
-                       <blue>33</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                    <colorrole role="Window">
-                     <brush brushstyle="SolidPattern">
-                      <color alpha="255">
-                       <red>31</red>
-                       <green>32</green>
-                       <blue>33</blue>
-                      </color>
-                     </brush>
-                    </colorrole>
-                   </disabled>
-                  </palette>
-                 </property>
-                 <property name="toolTip">
-                  <string>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</string>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:#fff;</string>
-                 </property>
-                 <property name="text">
-                  <string>R&amp;euse an existing receiving address (not recommended)</string>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="1">
-                <widget class="BitcoinAmountField" name="reqAmount">
+               <property name="text">
+                <string>Amo&amp;unt:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="buddy">
+                <cstring>reqAmount</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="2">
+              <widget class="BitcoinAmountField" name="reqAmount">
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>An optional amount to request. Leave this empty or zero to not request a specific amount.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="2">
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <widget class="QPushButton" name="receiveButton">
                  <property name="minimumSize">
                   <size>
-                   <width>80</width>
+                   <width>150</width>
                    <height>0</height>
                   </size>
                  </property>
-                 <property name="toolTip">
-                  <string>An optional amount to request. Leave this empty or zero to not request a specific amount.</string>
+                 <property name="text">
+                  <string>&amp;Request payment</string>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">background:transparent; margin-bottom:2px solid; margin-color: #046B5B;
-</string>
+                 <property name="icon">
+                  <iconset resource="../zest.qrc">
+                   <normaloff>:/icons/receiving_addresses</normaloff>:/icons/receiving_addresses</iconset>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
-                <widget class="QLineEdit" name="reqLabel">
-                 <property name="toolTip">
-                  <string>An optional label to associate with the new receiving address.</string>
+               <item>
+                <widget class="QPushButton" name="clearButton">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">background:transparent; margin-bottom:2px solid; margin-color: #046B5B;
-</string>
+                 <property name="toolTip">
+                  <string>Clear all fields of the form.</string>
                  </property>
                  <property name="text">
-                  <string/>
+                  <string>Clear</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../zest.qrc">
+                   <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
+                 </property>
+                 <property name="autoDefault">
+                  <bool>false</bool>
                  </property>
                 </widget>
                </item>
-               <item row="8" column="1">
-                <layout class="QHBoxLayout" name="horizontalLayout">
-                 <item>
-                  <widget class="QPushButton" name="receiveButton">
-                   <property name="enabled">
-                    <bool>true</bool>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>230</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
-                   </property>
-                   <property name="text">
-                    <string>&amp;Request payment</string>
-                   </property>
-                   <property name="icon">
-                    <iconset resource="../zest.qrc">
-                     <normaloff>:/icons/receiving_addresses</normaloff>:/icons/receiving_addresses</iconset>
-                   </property>
-                   <property name="checkable">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="horizontalSpacer">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="sizeType">
-                    <enum>QSizePolicy::Fixed</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>40</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="clearButton">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="toolTip">
-                    <string>Clear all fields of the form.</string>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
-                   </property>
-                   <property name="text">
-                    <string>Clear</string>
-                   </property>
-                   <property name="icon">
-                    <iconset resource="../zest.qrc">
-                     <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
-                   </property>
-                   <property name="autoDefault">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
+               <item>
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </item>
-             <item>
-              <spacer name="horizontalSpacer_3">
+             <item row="9" column="2">
+              <spacer name="verticalSpacer">
                <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeType">
-                <enum>QSizePolicy::Fixed</enum>
+                <enum>Qt::Vertical</enum>
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>40</width>
-                 <height>20</height>
+                 <width>20</width>
+                 <height>40</height>
                 </size>
                </property>
               </spacer>
              </item>
             </layout>
            </item>
-           <item>
-            <spacer name="verticalSpacer_4">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Fixed</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>30</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
           </layout>
          </widget>
         </item>
         <item>
-         <widget class="QFrame" name="framePaymentHistory">
+         <widget class="QFrame" name="frame">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>300</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background:#1f2021;</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -555,30 +244,13 @@ background-color: #09D9B7;
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
-           <property name="spacing">
-            <number>22</number>
-           </property>
-           <property name="leftMargin">
-            <number>22</number>
-           </property>
-           <property name="topMargin">
-            <number>34</number>
-           </property>
-           <property name="rightMargin">
-            <number>22</number>
-           </property>
-           <property name="bottomMargin">
-            <number>22</number>
-           </property>
            <item>
             <widget class="QLabel" name="label_6">
              <property name="font">
               <font>
-               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
               </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color:white; font-size:18px;</string>
              </property>
              <property name="text">
               <string>Requested payments history</string>
@@ -587,73 +259,56 @@ background-color: #09D9B7;
            </item>
            <item>
             <widget class="QTableView" name="recentRequestsView">
-             <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="Text">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>51</red>
+                   <green>51</green>
+                   <blue>51</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="Text">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>51</red>
+                   <green>51</green>
+                   <blue>51</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="Text">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>85</red>
+                   <green>85</green>
+                   <blue>85</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
              </property>
              <property name="contextMenuPolicy">
               <enum>Qt::CustomContextMenu</enum>
              </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Sunken</enum>
-             </property>
-             <property name="lineWidth">
-              <number>2</number>
-             </property>
-             <property name="midLineWidth">
-              <number>2</number>
-             </property>
-             <property name="verticalScrollBarPolicy">
-              <enum>Qt::ScrollBarAlwaysOff</enum>
-             </property>
-             <property name="sizeAdjustPolicy">
-              <enum>QAbstractScrollArea::AdjustToContents</enum>
-             </property>
              <property name="tabKeyNavigation">
               <bool>false</bool>
-             </property>
-             <property name="defaultDropAction">
-              <enum>Qt::IgnoreAction</enum>
-             </property>
-             <property name="alternatingRowColors">
-              <bool>true</bool>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>10</width>
-               <height>10</height>
-              </size>
-             </property>
-             <property name="showGrid">
-              <bool>false</bool>
-             </property>
-             <property name="gridStyle">
-              <enum>Qt::SolidLine</enum>
              </property>
              <property name="sortingEnabled">
               <bool>true</bool>
              </property>
-             <attribute name="horizontalHeaderMinimumSectionSize">
-              <number>50</number>
-             </attribute>
-             <attribute name="verticalHeaderDefaultSectionSize">
-              <number>50</number>
-             </attribute>
-             <attribute name="verticalHeaderMinimumSectionSize">
-              <number>50</number>
-             </attribute>
             </widget>
            </item>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <property name="leftMargin">
-              <number>12</number>
-             </property>
              <item>
               <widget class="QPushButton" name="showRequestButton">
                <property name="enabled">
@@ -661,34 +316,6 @@ background-color: #09D9B7;
                </property>
                <property name="toolTip">
                 <string>Show the selected request (does the same as double clicking an entry)</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
                </property>
                <property name="text">
                 <string>Show</string>
@@ -709,34 +336,6 @@ background-color: #09D9B7;
                </property>
                <property name="toolTip">
                 <string>Remove the selected entries from the list</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
                </property>
                <property name="text">
                 <string>Remove</string>
@@ -764,22 +363,6 @@ background-color: #09D9B7;
               </spacer>
              </item>
             </layout>
-           </item>
-           <item>
-            <spacer name="verticalSpacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Fixed</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>30</height>
-              </size>
-             </property>
-            </spacer>
            </item>
           </layout>
          </widget>

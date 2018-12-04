@@ -50,7 +50,7 @@ QFrame {
 
 QMenuBar {
 	background-color: #1f2021;
-        
+	min-height:27px;
 }
 
 QMenuBar::item {
@@ -179,7 +179,7 @@ QToolTip {
 }
 
 QStatusBar{
-        
+
         color:#fff;
         background-color: #1f2021;
 
@@ -189,7 +189,7 @@ QStatusBar{
 QStatusBar::item {
 
         border: 0px;
-        
+
 }
 
 /****************************************************************************************/
@@ -302,9 +302,8 @@ QPushButton#labelEncryptionIcon, QPushButton#labelConnectionsIcon {
 }
 
 
- 
-QPushButton{ /* Global Button Style */
 
+QPushButton { /* Global Button Style */
 	background-color: #08EEC3;
 	border: 0;
 	color:#333;
@@ -322,11 +321,11 @@ QPushButton{ /* Global Button Style */
 
 
 QPushButton:hover {
-background-color: #07BC9C;
+	background-color: #07BC9C;
 }
 
-QPushButton:pressed{
-background-color: #09D9B7;
+QPushButton:pressed {
+	background-color: #09D9B7;
 	border:1px solid #333333;
 }
 
@@ -547,7 +546,7 @@ QTableView::item { /* Table Item */
 QTableView::item:selected { /* Table Item Selected */
 	background-color:#08EEC3;
 	color:#181818;
-        
+
 }
 
 QTableWidget { /* Table Background */
@@ -821,8 +820,16 @@ QWidget#AddressBookPage QHeaderView::section { /* Min width for Windows fix */
 
 /**************************** MultiSig Dialog *******************************************/
 
+QDialog#MultisigDialog QTabWidget#multisigTabWidget QScrollArea {
+	border: 1px solid #fff;
+}
+
+QDialog#MultisigDialog QTabWidget#multisigTabWidget QScrollArea QFrame QLabel {
+	color: #ffffff;
+}
+
 QDialog#MultisigDialog  QFrame#addressFrame .QPushButton {
-  background-color: #08EEC3;
+	background-color: #08EEC3;
 	border: 0;
 	color:#333;
 	font-size:12px;
@@ -837,24 +844,21 @@ QDialog#MultisigDialog  QFrame#addressFrame .QPushButton {
 	border-bottom-left-radius: 20px;
 }
 
-
 QDialog#MultisigDialog  QFrame#addressFrame .QPushButton:hover {
-background-color: #07BC9C;
+	background-color: #07BC9C;
 }
 
 QDialog#MultisigDialog  QFrame#addressFrame .QPushButton:pressed{
-background-color: #09D9B7;
+	background-color: #09D9B7;
 	border:1px solid #333333;
 }
 
-
-
 QDialog#MultisigDialog QFrame#addressFrame{
-background-color: #212121;
+	background-color: #212121;
 }
 
 QDialog#MultisigDialog  QFrame#addressFrame .QPushButton {
-  background-color: #08EEC3;
+	background-color: #08EEC3;
 	border: 0;
 	color:#333;
 	font-size:12px;
@@ -869,24 +873,21 @@ QDialog#MultisigDialog  QFrame#addressFrame .QPushButton {
 	border-bottom-left-radius: 20px;
 }
 
-
 QDialog#MultisigDialog  QFrame#addressFrame .QPushButton:hover {
-background-color: #07BC9C;
+	background-color: #07BC9C;
 }
 
 QDialog#MultisigDialog  QFrame#addressFrame .QPushButton:pressed{
-background-color: #09D9B7;
+	background-color: #09D9B7;
 	border:1px solid #333333;
 }
 
-
-
 QDialog#MultisigDialog QFrame#addressFrame{
-background-color: #212121;
+	background-color: #212121;
 }
 
 QDialog#MultisigDialog  QFrame#addressFrame .QPushButton {
-  background-color: #08EEC3;
+	background-color: #08EEC3;
 	border: 0;
 	color:#333;
 	font-size:12px;
@@ -936,9 +937,10 @@ background-color: #212121;
 /* Encrypt Wallet and Change Passphrase Dialog */
 QDialog#AskPassphraseDialog QLabel#passLabel1,
 QDialog#AskPassphraseDialog QLabel#passLabel2,
-QDialog#AskPassphraseDialog QLabel#passLabel3 {
+QDialog#AskPassphraseDialog QLabel#passLabel3,
+QDialog#AskPassphraseDialog QCheckBox#stakingCheckBox {
 	qproperty-alignment: 'AlignVCenter | AlignRight';
-color:#fff;
+	color:#fff;
 }
 
 /* Options Dialog */
@@ -975,7 +977,7 @@ QDialog#OptionsDialog QLabel#label_3 { /* Translations Missing? Label */
 
 QDialog#OptionsDialog QCheckBox {
 	min-height:20px;
-        color:#fff;
+	color:#fff;
 }
 
 QDialog#OptionsDialog QCheckBox#displayAddresses {
@@ -1121,7 +1123,7 @@ QWidget .QFrame#frameBalances .QLabel#labelWalletStatus { /* Wallet Sync Status 
 	margin-left: 3px;
 }
 
-QWidget .QFrame#frameBalances .QLabel#labelUnconfirmed, /* Pending Balance */
+QWidget .QFrame#frameBalances .QLabel#labelPending, /* Pending Balance */
 QWidget .QFrame#frameBalances .QLabel#labelImmature { /* Immature Balance */
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	font-size: 14px;
@@ -1132,6 +1134,7 @@ QWidget .QFrame#frameBalances .QLabel#labelImmature { /* Immature Balance */
 QWidget .QFrame#frameBalances .QLabel#labelWatchPending, /* Watch-only Pending Balance */
 QWidget .QFrame#frameBalances .QLabel#labelWatchImmature, /* Watch-only Immature Balance */
 QWidget .QFrame#frameBalances .QLabel#labelWatchAvailable, /* Watch-only Balance */
+QWidget .QFrame#frameBalances .QLabel#labelWatchLocked, /* Watch-only Locked Balance */
 QWidget .QFrame#frameBalances .QLabel#labelWatchonly, /* Watch-only Header */
 QWidget .QFrame#frameBalances .QLabel#labelSpendable { /* Spendable Header */
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
@@ -1142,7 +1145,8 @@ QWidget .QFrame#frameBalances .QLabel#labelSpendable { /* Spendable Header */
 QWidget .QFrame#frameBalances .QLabel#labelImmatureText, /* Immature Balance Label */
 QWidget .QFrame#frameBalances .QLabel#labelTotalText, /* Total Balance Label */
 QWidget .QFrame#frameBalances .QLabel#labelPendingText, /* Pending Balance Label */
-QWidget .QFrame#frameBalances .QLabel#labelBalanceText, /* Available Balance Label */
+QWidget .QFrame#frameBalances .QLabel#labelAvailableText, /* Available Balance Label */
+QWidget .QFrame#frameBalances .QLabel#labelLockedText, /* Locked Balance Label */
 QWidget .QFrame#frameBalances .QLabel#labelBalances { /* ZEST Balances Header Label */
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	min-width: 160px;
@@ -1154,6 +1158,7 @@ QWidget .QFrame#frameBalances .QLabel#labelBalances { /* ZEST Balances Header La
 
 QWidget .QFrame#frameBalances .QLabel#labelBalances { /* ZEST Balances Header Label */
 	font-weight: bold;
+	font-size:20px;
 }
 
 QWidget .QFrame#frameBalances #lineBalances { /* ZEST Balances Line separator */
@@ -1162,9 +1167,16 @@ QWidget .QFrame#frameBalances #lineBalances { /* ZEST Balances Line separator */
 
 
 QWidget .QFrame#frameBalances .QLabel#labelTotal, /* Total Balance */
-QWidget .QFrame#frameBalances .QLabel#labelBalance { /* Available Balance */
+QWidget .QFrame#frameBalances .QLabel#labelAvailable { /* Available Balance */
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	font-size: 16px;
+	font-weight: normal;
+	color: #08EEC3;
+}
+
+QWidget .QFrame#frameBalances .QLabel#labelLocked { /* Locked Balance */
+	qproperty-alignment: 'AlignVCenter | AlignLeft';
+	font-size: 14px;
 	font-weight: normal;
 	color: #08EEC3;
 }
@@ -1180,7 +1192,7 @@ QWidget .QFrame#frameBalances .QLabel#labelWatchTotal { /* Watch-only Total Bala
 QWidget .QFrame#frame_RecentTransactions { /* Transactions Widget */
 }
 
-QWidget .QFrame#frame_RecentTransactions .QLabel#label_4 { /* Recent Transactions Label */
+QWidget .QFrame#frame_RecentTransactions .QLabel#labelRecentTransactions { /* Recent Transactions Label */
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	min-width:180px;
 	background-color:transparent;
@@ -1207,6 +1219,10 @@ QWidget .QFrame#frame_RecentTransactions QListView { /* Transaction List */
 
 QDialog#SendCoinsDialog {
 	background: transparent;
+}
+
+QDialog#SendCoinsDialog QCheckBox {
+	color: #fff;
 }
 
 QDialog#SendCoinsDialog .QFrame#frameCoinControl { /* Coin Control Section */
@@ -1337,6 +1353,11 @@ QDialog#MultisigDialog .QToolButton:pressed {
 /* QStackedWidget#SendCoinsEntry .QToolButton#deleteButton { */
 /* QStackedWidget#SendCoinsEntry .QLineEdit#addAsLabel { /* Pay To Input Field */
 /* QStackedWidget#SendCoinsEntry .QLineEdit#addAsLabel:!focus { /* Pay To Input Field */
+
+QDialog#MultiSendDialog .QCheckBox#multiSendStakeCheckBox,
+QDialog#MultiSendDialog .QCheckBox#multiSendMasternodeCheckBox {
+	color: #fff;
+}
 
 /**************************** COIN CONTROL POPUP ****************************************/
 
@@ -1478,6 +1499,10 @@ QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::indicator { /* Coin
 
 QWidget#ReceiveCoinsDialog {
 	background-color: transparent;
+}
+
+QWidget#ReceiveCoinsDialog QCheckBox {
+	color: #fff;
 }
 
 QWidget#ReceiveCoinsDialog .QFrame#framePayment {

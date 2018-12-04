@@ -103,7 +103,7 @@ void ReceiveCoinsDialog::clear()
     ui->reqAmount->clear();
     ui->reqLabel->setText("");
     ui->reqMessage->setText("");
-    ui->reuseAddress->setChecked(true);
+    ui->reuseAddress->setChecked(false);
     updateDisplayUnit();
 }
 

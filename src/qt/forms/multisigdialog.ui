@@ -22,29 +22,8 @@
   <layout class="QVBoxLayout" name="verticalLayout_8">
    <item>
     <widget class="QTabWidget" name="multisigTabWidget">
-     <property name="styleSheet">
-      <string notr="true">QScrollArea{border: 1px solid #5b4c7c;}
-QFrame{background-color:#f2f0f0;}
-QLabel{background-color:#ffffff;}
-QFrame &gt; QLabel{background-color:#f2f0f0;}</string>
-     </property>
-     <property name="tabShape">
-      <enum>QTabWidget::Rounded</enum>
-     </property>
      <property name="currentIndex">
       <number>1</number>
-     </property>
-     <property name="elideMode">
-      <enum>Qt::ElideNone</enum>
-     </property>
-     <property name="documentMode">
-      <bool>false</bool>
-     </property>
-     <property name="tabsClosable">
-      <bool>false</bool>
-     </property>
-     <property name="tabBarAutoHide">
-      <bool>false</bool>
      </property>
      <widget class="QWidget" name="addMultisigTab">
       <property name="sizePolicy">
@@ -83,9 +62,6 @@ QFrame &gt; QLabel{background-color:#f2f0f0;}</string>
          </item>
          <item>
           <widget class="QLabel" name="enterMLabel">
-           <property name="styleSheet">
-            <string notr="true">background:transparent;</string>
-           </property>
            <property name="text">
             <string>Enter the minimum number of signatures required to sign transactions</string>
            </property>
@@ -97,10 +73,6 @@ QFrame &gt; QLabel{background-color:#f2f0f0;}</string>
         <layout class="QHBoxLayout" name="addressLabelLayout">
          <item>
           <widget class="QLabel" name="addressLableLabel">
-           <property name="styleSheet">
-            <string notr="true">background:transparent;
-</string>
-           </property>
            <property name="text">
             <string>Address Label:</string>
            </property>
@@ -114,53 +86,9 @@ QFrame &gt; QLabel{background-color:#f2f0f0;}</string>
        <item>
         <layout class="QHBoxLayout" name="addAddressLayout">
          <item>
-          <spacer name="verticalSpacer">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Minimum</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
           <widget class="QPushButton" name="addAddressButton">
            <property name="toolTip">
             <string>Add another address that could sign to verify a transaction from the multisig address.</string>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
            </property>
            <property name="text">
             <string>&amp;Add Address / Key</string>
@@ -181,9 +109,6 @@ background-color: #09D9B7;
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background:transparent;</string>
            </property>
            <property name="text">
             <string>Local addresses or public keys that can sign:</string>
@@ -229,6 +154,19 @@ background-color: #09D9B7;
            <item>
             <layout class="QVBoxLayout" name="addressList"/>
            </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
           </layout>
          </widget>
         </widget>
@@ -249,34 +187,6 @@ background-color: #09D9B7;
            <property name="toolTipDuration">
             <number>-3</number>
            </property>
-           <property name="styleSheet">
-            <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
-           </property>
            <property name="text">
             <string>C&amp;reate</string>
            </property>
@@ -291,9 +201,6 @@ background-color: #09D9B7;
          </item>
          <item>
           <widget class="QLabel" name="label">
-           <property name="styleSheet">
-            <string notr="true">background:transparent;</string>
-           </property>
            <property name="text">
             <string>Status:</string>
            </property>
@@ -313,9 +220,6 @@ background-color: #09D9B7;
              <height>75</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">	background-color: #212121;</string>
-           </property>
            <property name="readOnly">
             <bool>true</bool>
            </property>
@@ -333,9 +237,6 @@ background-color: #09D9B7;
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background:transparent;</string>
          </property>
          <property name="text">
           <string>Use below to quickly import an address by its redeem. Don't forget to add a label before clicking import!
@@ -359,34 +260,6 @@ Please be patient after clicking import.</string>
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
            </property>
            <property name="text">
             <string>&amp;Import Redeem</string>
@@ -430,10 +303,6 @@ background-color: #09D9B7;
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="styleSheet">
-                <string notr="true">background:transparent;
-</string>
-               </property>
                <property name="text">
                 <string>Inputs:</string>
                </property>
@@ -447,34 +316,6 @@ background-color: #09D9B7;
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="styleSheet">
-                <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
-               </property>
                <property name="text">
                 <string>Coin Control</string>
                </property>
@@ -487,10 +328,6 @@ background-color: #09D9B7;
                </property>
                <item row="0" column="0">
                 <widget class="QLabel" name="labelQuantity">
-                 <property name="styleSheet">
-                  <string notr="true">background:transparent;
-</string>
-                 </property>
                  <property name="text">
                   <string>Quantity Selected:</string>
                  </property>
@@ -498,10 +335,6 @@ background-color: #09D9B7;
                </item>
                <item row="0" column="1">
                 <widget class="QLabel" name="labelQuantity_int">
-                 <property name="styleSheet">
-                  <string notr="true">background:transparent;
-</string>
-                 </property>
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -509,10 +342,6 @@ background-color: #09D9B7;
                </item>
                <item row="1" column="0">
                 <widget class="QLabel" name="labelAmount">
-                 <property name="styleSheet">
-                  <string notr="true">background:transparent;
-</string>
-                 </property>
                  <property name="text">
                   <string>Amount:</string>
                  </property>
@@ -520,10 +349,6 @@ background-color: #09D9B7;
                </item>
                <item row="1" column="1">
                 <widget class="QLabel" name="labelAmount_int">
-                 <property name="styleSheet">
-                  <string notr="true">background:transparent;
-</string>
-                 </property>
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -541,34 +366,6 @@ background-color: #09D9B7;
                </property>
                <property name="toolTip">
                 <string>Add an input to fund the outputs</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
                </property>
                <property name="text">
                 <string>Add a Raw Input</string>
@@ -626,10 +423,6 @@ background-color: #09D9B7;
             <layout class="QHBoxLayout" name="addDestinationLayout">
              <item>
               <widget class="QLabel" name="addDestinationLabel">
-               <property name="styleSheet">
-                <string notr="true">background:transparent;
-</string>
-               </property>
                <property name="text">
                 <string>Address / Amount:</string>
                </property>
@@ -645,34 +438,6 @@ background-color: #09D9B7;
                </property>
                <property name="toolTip">
                 <string>Add destinations to send ZEST to</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
                </property>
                <property name="text">
                 <string>Add &amp;Destination</string>
@@ -758,34 +523,6 @@ background-color: #09D9B7;
                <property name="toolTip">
                 <string>Create a transaction object using the given inputs to the given outputs</string>
                </property>
-               <property name="styleSheet">
-                <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
-               </property>
                <property name="text">
                 <string>Cr&amp;eate</string>
                </property>
@@ -808,10 +545,6 @@ background-color: #09D9B7;
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background:transparent;
-</string>
                </property>
                <property name="text">
                 <string>Status:</string>
@@ -837,9 +570,6 @@ background-color: #09D9B7;
                </property>
                <property name="sizeAdjustPolicy">
                 <enum>QAbstractScrollArea::AdjustToContents</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background:rgba(129, 129, 129,0.5);</string>
                </property>
                <property name="readOnly">
                 <bool>true</bool>
@@ -877,10 +607,6 @@ txScrollArea:{
         <layout class="QHBoxLayout" name="transactionHexLayout">
          <item>
           <widget class="QLabel" name="transactionHexLabel">
-           <property name="styleSheet">
-            <string notr="true">background:transparent;
-</string>
-           </property>
            <property name="text">
             <string>Transaction Hex:</string>
            </property>
@@ -918,34 +644,6 @@ txScrollArea:{
                <property name="toolTip">
                 <string>Sign the transaction from this wallet or from provided private keys</string>
                </property>
-               <property name="styleSheet">
-                <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
-               </property>
                <property name="text">
                 <string>S&amp;ign</string>
                </property>
@@ -978,34 +676,6 @@ background-color: #09D9B7;
                <property name="autoFillBackground">
                 <bool>false</bool>
                </property>
-               <property name="styleSheet">
-                <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
-               </property>
                <property name="text">
                 <string>Co&amp;mmit</string>
                </property>
@@ -1031,34 +701,6 @@ background-color: #09D9B7;
                  <property name="toolTip">
                   <string>Add private keys to sign the transaction with</string>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"> .QPushButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:25px;
-	padding-right:25px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
-}
-
-
- .QPushButton:hover {
-background-color: #07BC9C;
-}
-
- .QPushButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
-                 </property>
                  <property name="text">
                   <string>Add Private &amp;Key</string>
                  </property>
@@ -1070,10 +712,6 @@ background-color: #09D9B7;
                </item>
                <item>
                 <widget class="QLabel" name="addPrivKeyLabel">
-                 <property name="styleSheet">
-                  <string notr="true">background:transparent;
-</string>
-                 </property>
                  <property name="text">
                   <string>Sign with only private keys (Not Recommened)</string>
                  </property>
@@ -1087,10 +725,6 @@ background-color: #09D9B7;
             <layout class="QHBoxLayout" name="horizontalLayout_5">
              <item>
               <widget class="QLabel" name="signButtonStatusLabel">
-               <property name="styleSheet">
-                <string notr="true">background:transparent;
-</string>
-               </property>
                <property name="text">
                 <string>Status:</string>
                </property>
@@ -1109,9 +743,6 @@ background-color: #09D9B7;
                  <width>16777215</width>
                  <height>16777215</height>
                 </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">	background-color: #212121;</string>
                </property>
                <property name="verticalScrollBarPolicy">
                 <enum>Qt::ScrollBarAsNeeded</enum>

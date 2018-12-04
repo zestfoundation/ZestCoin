@@ -89,7 +89,6 @@ private:
     QPushButton* labelConnectionsIcon;
     QLabel* labelBlocksIcon;
     QWidget* statusBarSpacer;
-    QWidget* statusBarSpacer2;
 
     QLabel* progressBarLabel;
     QProgressBar* progressBar;

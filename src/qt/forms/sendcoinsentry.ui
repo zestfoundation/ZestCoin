@@ -66,34 +66,6 @@
         <property name="toolTip">
          <string>Choose previously used address</string>
         </property>
-        <property name="styleSheet">
-         <string notr="true"> .QToolButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:5px;
-	padding-right:5px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-
- .QToolButton:hover {
-background-color: #07BC9C;
-}
-
- .QToolButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
-        </property>
         <property name="text">
          <string/>
         </property>
@@ -111,34 +83,6 @@ background-color: #09D9B7;
         <property name="toolTip">
          <string>Paste address from clipboard</string>
         </property>
-        <property name="styleSheet">
-         <string notr="true"> .QToolButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:5px;
-	padding-right:5px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-
- .QToolButton:hover {
-background-color: #07BC9C;
-}
-
- .QToolButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
-        </property>
         <property name="text">
          <string/>
         </property>
@@ -155,34 +99,6 @@ background-color: #09D9B7;
        <widget class="QToolButton" name="deleteButton">
         <property name="toolTip">
          <string>Remove this entry</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"> .QToolButton {
-  background-color: #08EEC3;
-	border: 0;
-	color:#333;
-	font-size:12px;
-	font-weight:bold;
-	padding-left:5px;
-	padding-right:5px;
-	padding-top:1px;
-	padding-bottom:1px;
-	height: 26px;
-	margin: 2px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-
- .QToolButton:hover {
-background-color: #07BC9C;
-}
-
- .QToolButton:pressed{
-background-color: #09D9B7;
-	border:1px solid #333333;
-}
-</string>
         </property>
         <property name="text">
          <string/>
@@ -1297,15 +1213,14 @@ background-color: #09D9B7;
  </widget>
  <customwidgets>
   <customwidget>
-   <class>BitcoinAmountField</class>
-   <extends>QLineEdit</extends>
-   <header>bitcoinamountfield.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>QValidatedLineEdit</class>
    <extends>QLineEdit</extends>
    <header>qvalidatedlineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>BitcoinAmountField</class>
+   <extends>QLineEdit</extends>
+   <header>bitcoinamountfield.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

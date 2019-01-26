@@ -104,6 +104,7 @@ BITCOIN_CORE_H = \
   httprpc.h \
   httpserver.h \
   init.h \
+  invalid.h \
   kernel.h \
   swifttx.h \
   key.h \

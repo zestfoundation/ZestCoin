@@ -31,6 +31,12 @@
   <key>CFBundleExecutable</key>
   <string>Zest-Qt</string>
 
+  <key>CFBundleName</key>
+  <string>Zest-Qt</string>
+
+  <key>LSHasLocalizedDisplayName</key>
+  <true/>
+
   <key>CFBundleIdentifier</key>
   <string>io.zestcoin.Zest-Qt</string>
 

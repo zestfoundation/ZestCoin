@@ -16,6 +16,7 @@
 #include <QCompleter>
 
 class ClientModel;
+class RPCTimerInterface;
 
 namespace Ui
 {
@@ -23,6 +24,7 @@ class RPCConsole;
 }
 
 QT_BEGIN_NAMESPACE
+class QMenu;
 class QItemSelection;
 QT_END_NAMESPACE
 
@@ -134,6 +136,7 @@ private:
     int historyPtr;
     NodeId cachedNodeid;
     QCompleter *autoCompleter;
+    RPCTimerInterface *rpcTimerInterface;
 };
 
 #endif // BITCOIN_QT_RPCCONSOLE_H

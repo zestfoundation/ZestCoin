@@ -112,6 +112,7 @@ public:
         nMaturity = 10;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 29300000 * COIN;
+        nBlockEnforceInvalidUTXO = 124117; // Start enforcing the invalid UTXO's
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 5025;

@@ -1577,7 +1577,11 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 1 * COIN;
     else if (nHeight > 5000 && nHeight <= 25000)
         nSubsidy = 10 * COIN;
-    else if (nHeight > 25000 && nHeight <= 1050000)
+    else if (nHeight > 25000 && nHeight <= 124116)
+        nSubsidy = 7.5 * COIN;
+    else if (nHeight > 124116 && nHeight <= 126116) // 124117 FORK: 2k blocks @ 1 ZEST
+        nSubsidy = 1 * COIN;
+    else if (nHeight > 126116 && nHeight <= 1050000)
         nSubsidy = 7.5 * COIN;
     else if (nHeight > 1050000 && nHeight <= 2100000)
         nSubsidy = 4 * COIN;
